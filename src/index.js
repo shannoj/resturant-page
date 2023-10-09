@@ -43,6 +43,18 @@ function buildHeader(){
 document.body.appendChild(buildHeader());
 document.body.appendChild(buildBody());
 
+document.getElementById('tab1').addEventListener('click', () => {
+
+});
+
+document.getElementById('tab2').addEventListener('click', () => {
+
+});
+
+document.getElementById('tab3').addEventListener('click', () => {
+
+});
+
 if (module.hot) {
     module.hot.accept('./index.js', function() {
       console.log('Accepting the updated printMe module!');
