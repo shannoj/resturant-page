@@ -1,4 +1,5 @@
 import "./style.css"
+import Icon from './icon.png';
 
 function buildBody(){
     const container = document.createElement('div');
@@ -19,20 +20,28 @@ function buildBody(){
 }
 
 function buildHeader(){
+    const myIcon = new Image();
+    myIcon.src = Icon;
+    myIcon.setAttribute('id', 'icon');
+
     const header = document.createElement('div');
     const tab1 = document.createElement('button');
     const tab2 = document.createElement('button');
     const tab3 = document.createElement('button');
+    const resturantImage = document.createElement('div')
 
     header.setAttribute('id', 'header');
     tab1.setAttribute('id', 'tab1');
     tab2.setAttribute('id', 'tab2');
     tab3.setAttribute('id', 'tab3');
+    resturantImage.setAttribute('id', 'resturantImage');
+    resturantImage.appendChild(myIcon);
 
     tab1.innerHTML = 'Home';
     tab2.innerHTML = 'Menu';
     tab3.innerHTML = 'Contact';
 
+    header.appendChild(resturantImage);
     header.appendChild(tab1);
     header.appendChild(tab2);
     header.appendChild(tab3);

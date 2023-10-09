@@ -41,3 +41,13 @@
     width: 25%;
     background-color: white;
 }
+
+#icon{
+    height: 100%;
+    width: 100%;
+}
+
+#resturantImage{
+    height: 50%;
+    width: 8.5%;
+}
