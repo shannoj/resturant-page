@@ -1,17 +1,25 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
 
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
-    static: './dist',
+    port: 8080,
+    contentBase: path.resolve(__dirname, 'dist'),
+    hot: true,
+    client: true,
+    open: true,
+    watchContentBase: true
   },
   plugins: [
     new HtmlWebpackPlugin({
-        title: 'Development',
+        title: 'Hot Module Replacment',
     }),
+    // Plugin for hot module replacement
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
@@ -28,5 +36,6 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
+    clean: true,
   },
 };

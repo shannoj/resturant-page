@@ -8,6 +8,7 @@
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "server": "node server.js",
+    "develop": "webpack-dev-server --open --mode development --config config/webpack.config.dev.js",
     "build": "webpack"
   },
   "keywords": [],
