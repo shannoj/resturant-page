@@ -40,20 +40,37 @@ function buildHeader(){
     return header;
 }
 
+
 document.body.appendChild(buildHeader());
 document.body.appendChild(buildBody());
 
+export default buildBody();
+
 document.getElementById('tab1').addEventListener('click', () => {
+    loadTabContent('index.js');
+  });
+  
+  document.getElementById('tab2').addEventListener('click', () => {
+    loadTabContent('tab2.js');
+  });
+  
+  document.getElementById('tab3').addEventListener('click', () => {
+    loadTabContent('tab3.js');
+  });
 
-});
-
-document.getElementById('tab2').addEventListener('click', () => {
-
-});
-
-document.getElementById('tab3').addEventListener('click', () => {
-
-});
+  function loadTabContent(moduleName) {
+    // Dynamically import the content module
+    import(/* webpackChunkName: "[request]" */ `./${moduleName}`).then((module) => {
+        // Clear existing content
+        document.getElementById('container').innerHTML = '';
+        // Append the loaded content to the tab-content container
+        document.getElementById('container').appendChild(module.default);
+      })
+      .catch((error) => {
+        console.error('Error loading module:', error);
+      });
+  }
+  
 
 if (module.hot) {
     module.hot.accept('./index.js', function() {
