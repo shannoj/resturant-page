@@ -8,12 +8,12 @@
     "watch": "webpack --watch",
     "develop": "webpack-dev-server --open --mode development --config config/webpack.config.dev.js",
     "build": "webpack",
-    "Websitepush": "git subtree push --prefix dist origin gh-pages",
-    "predeploy": "npm run build"
+    "Websitepush": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "predeploy": "npm run build",
   "devDependencies": {
     "css-loader": "^6.8.1",
     "express": "^4.18.2",
