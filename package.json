@@ -6,8 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
-    "start": "webpack serve --open",
-    "server": "node server.js",
     "develop": "webpack-dev-server --open --mode development --config config/webpack.config.dev.js",
     "build": "webpack",
     "Websitepush": "git subtree push --prefix dist origin gh-pages"
