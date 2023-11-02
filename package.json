@@ -8,7 +8,8 @@
     "watch": "webpack --watch",
     "develop": "webpack-dev-server --open --mode development --config config/webpack.config.dev.js",
     "build": "webpack",
-    "Websitepush": "git subtree push --prefix dist origin gh-pages"
+    "Websitepush": "git subtree push --prefix dist origin gh-pages",
+    "predeploy": "npm run build"
   },
   "keywords": [],
   "author": "",
